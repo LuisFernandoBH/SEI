@@ -22,7 +22,7 @@
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 			<script src="../SiteAssets/ECN/js/spDataServices.js"></script>
 
 </head>
@@ -30,12 +30,21 @@
     <div class="container">
             <div class="jumbotron" style="background-color: #035d68;">
             <div class="h1 text-center" style="color: white;font-family: 'Anton', sans-serif;">Engineering Changing Notice </div>
+            </br>
       <div class="row">
-          <div class="col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" style="width: 30%"> 
               <img src="../SiteAssets/ECN/img/auditoria.png" class="img-responsive center-block">
+              
+                  <!-- Botões de Salvar -->
+
+                  <div class="btn btn-group center-block" >
+                      <button class="btn btn-lg btn-default center-block">Cancel</button>
+                      <button class="btn btn-default btn-lg center-block" style="background-color: #e8e8e8;color: #009688;" onclick="createsupport();return false;">Register</button>
+                    </div>
           </div>
+          <!-- Formulário Principal -->
           
-          <div class="col-lg-6 col-md-6">
+          <div class="col-lg-6 col-md-6" style="width: 70%">
                   <div class="input-group" >
                     <span class="input-group-addon" style="background-color: #e8e8e8;color: #009688; "><i class="glyphicon glyphicon-warning-sign"></i> ECN Number</span>
                     <input id="Number" disabled="disabled" type="text" class="form-control" name="case" placeholder="" value="ECN Number will be generated after saving">
@@ -122,14 +131,202 @@
                     <textarea class="form-control" id="Comments"></textarea>
               
                 </div>
+                    <!-- Tabela -->
+                    <div class="panel panel-default">
+
+                        <table class="table table-hover table-responsive table-bordered" style="background-color: aliceblue;  ">
+                          <thead>
+                            <tr style="background-color: #e8e8e8; color: #009688;  ">
+                              <th scope="col" style="vertical-align:middle; text-align: center">#</th>
+                              <th scope="col" style="vertical-align:middle; text-align: center">Description</th>
+                              <th scope="col" style="vertical-align:middle; text-align: center">Old Part Number</th>
+                              <th scope="col" style="vertical-align:middle; text-align: center">Old Design Number</th>
+                              <th scope="col" style="vertical-align:middle; text-align: center">New Part Number</th>
+                              <th scope="col" style="vertical-align:middle; text-align: center">New Drawing Number</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <!-- Linha 1 -->
+                              <th scope="row" style="vertical-align:middle;">1</th>
+                              <td>
+                                <div class="input-group" >
+                                  <input id="tDescription1" type="text" class="form-control" name="case" placeholder="">
+                                </div>
+                              </td>
+                              <td>
+                                <div class="input-group" >
+                                  <input id="tOldPN1" type="text" class="form-control" name="case" placeholder="">
+                                </div>
+                              </td>
+                              <td>
+                                <div class="input-group" >
+                                  <input id="tOldDN1" type="text" class="form-control" name="case" placeholder="">
+                                </div>
+                              </td>
+                              <td>
+                                <div class="input-group" >
+                                  <input id="tNewPN1" type="text" class="form-control" name="case" placeholder="">
+                                </div>
+                              </td>
+                              <td>
+                                <div class="input-group" >
+                                  <input id="tNewDN1" type="text" class="form-control" name="case" placeholder="">
+                                </div>
+                              </td>
+                            </tr>
+                          
+                              <!-- Linha 2 -->
+                            <tr>
+                              <th scope="row" style="vertical-align:middle;">2</th>
+                              <td>
+                                <div class="input-group" >
+                                  <input id="tDescription2" type="text" class="form-control" name="case" placeholder="">
+                                </div>
+                              </td>
+                              <td>
+                                <div class="input-group" >
+                                  <input id="tOldPN2" type="text" class="form-control" name="case" placeholder="">
+                                </div>
+                              </td>
+                              <td>
+                                <div class="input-group" >
+                                  <input id="tOldDN2" type="text" class="form-control" name="case" placeholder="">
+                                </div>
+                              </td>
+                              <td>
+                                <div class="input-group" >
+                                  <input id="tNewPN2" type="text" class="form-control" name="case" placeholder="">
+                                </div>
+                              </td>
+                              <td>
+                                <div class="input-group" >
+                                  <input id="tNewDN2" type="text" class="form-control" name="case" placeholder="">
+                                </div>
+                              </td>
+                            </tr>
+
+                              <!-- Linha 3 -->
+
+                            <tr>
+                              <th scope="row" style="vertical-align:middle;">3</th>
+                              <td>
+                                <div class="input-group" >
+                                  <input id="tDescription3" type="text" class="form-control" name="case" placeholder="">
+                                </div>
+                              </td>
+                              <td>
+                                <div class="input-group" >
+                                  <input id="tOldPN3" type="text" class="form-control" name="case" placeholder="">
+                                </div>
+                              </td>
+                              <td>
+                                <div class="input-group" >
+                                  <input id="tOldDN3" type="text" class="form-control" name="case" placeholder="">
+                                </div>
+                              </td>
+                              <td>
+                                <div class="input-group" >
+                                  <input id="tNewPN3" type="text" class="form-control" name="case" placeholder="">
+                                </div>
+                              </td>
+                              <td>
+                                <div class="input-group" >
+                                  <input id="tNewDN3" type="text" class="form-control" name="case" placeholder="">
+                                </div>
+                              </td>
+                            </tr>
+                              <!-- Linha 4 -->
+
+
+                            <tr>
+                              <th scope="row" style="vertical-align:middle;">4</th>
+                              <td>
+                                <div class="input-group" >
+                                  <input id="tDescription4" type="text" class="form-control" name="case" placeholder="">
+                                </div>
+                              </td>
+                              <td>
+                                <div class="input-group" >
+                                  <input id="tOldPN4" type="text" class="form-control" name="case" placeholder="">
+                                </div>
+                              </td>
+                              <td>
+                                <div class="input-group" >
+                                  <input id="tOldDN4" type="text" class="form-control" name="case" placeholder="">
+                                </div>
+                              </td>
+                              <td>
+                                <div class="input-group" >
+                                  <input id="tNewPN4" type="text" class="form-control" name="case" placeholder="">
+                                </div>
+                              </td>
+                              <td>
+                                <div class="input-group" >
+                                  <input id="tNewDN4" type="text" class="form-control" name="case" placeholder="">
+                                </div>
+                              </td>
+                            </tr>
+
+                              <!-- Linha 5 -->
+
+
+                            <tr>
+                              <th scope="row" style="vertical-align:middle;">5</th>
+                              <td>
+                                <div class="input-group" >
+                                  <input id="tDescription5" type="text" class="form-control" name="case" placeholder="">
+                                </div>
+                              </td>
+                              <td>
+                                <div class="input-group" >
+                                  <input id="tOldPN5" type="text" class="form-control" name="case" placeholder="">
+                                </div>
+                              </td>
+                              <td>
+                                <div class="input-group" >
+                                  <input id="tOldDN5" type="text" class="form-control" name="case" placeholder="">
+                                </div>
+                              </td>
+                              <td>
+                                <div class="input-group" >
+                                  <input id="tNewPN5" type="text" class="form-control" name="case" placeholder="">
+                                </div>
+                              </td>
+                              <td>
+                                <div class="input-group" >
+                                  <input id="tNewDN5" type="text" class="form-control" name="case" placeholder="">
+                                </div>
+                              </td>
+                            </tr>
+
+
+                          </tbody>
+                        </table>
+                </div>
               </div>
-          
-            <div class="btn btn-group center-block">
-              <button class="btn btn-lg btn-default center-block">Cancel</button>
-              <button class="btn btn-default btn-lg center-block" style="background-color: #e8e8e8;color: #009688;" onclick="createsupport();return false;">Register ECN</button>
-            </div>
+          <div>
+            <br><br>
+              
+          </div>
+
+         
     </div>
   </div>
-
+  <div ng-app="listApp">    
+      <div id="App1" ng-controller="controller1">    
+          <h1>First List Items</h1>    
+          <div ng-repeat="item in items">    
+              <p>{{item.Title}}</p>    
+          </div>    
+      </div>    
+      <div id="App2" ng-controller="controller2">    
+          <h1>Second List Items</h1>    
+          <div ng-repeat="item in items">    
+              <p>{{item.Title}}</p>    
+          </div>    
+      </div>    
+          
+  </div>    
 </body>
 </html>
