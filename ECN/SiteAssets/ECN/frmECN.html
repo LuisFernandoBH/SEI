@@ -27,7 +27,7 @@
 
 </head>
 <body>
-    <div class="container">
+    <div class="container"  ng-app="listApp">
             <div class="jumbotron" style="background-color: #035d68;">
             <div class="h1 text-center" style="color: white;font-family: 'Anton', sans-serif;">Engineering Changing Notice </div>
             </br>
@@ -44,7 +44,7 @@
           </div>
           <!-- Formulário Principal -->
           
-          <div class="col-lg-6 col-md-6" style="width: 70%">
+          <div class="col-lg-6 col-md-6" style="width: 70%" >
                   <div class="input-group" >
                     <span class="input-group-addon" style="background-color: #e8e8e8;color: #009688; "><i class="glyphicon glyphicon-warning-sign"></i> ECN Number</span>
                     <input id="Number" disabled="disabled" type="text" class="form-control" name="case" placeholder="" value="ECN Number will be generated after saving">
@@ -57,33 +57,43 @@
                   <div class="input-group" >
                     <span class="input-group-addon" style="background-color: #e8e8e8;color: #009688;"> Reason for Change</span>
                     <input id="Reason" type="text" class="form-control" name="case" placeholder="">
-                  </div>
-                  <div class="input-group">
+                  </div>  
+                  <div class="input-group" >
                       <span class="input-group-addon" style="background-color: #e8e8e8;color: #009688;">Product Line</span>
-                    <select class="form-control" id="Line">
-                        <option>High</option>
-                        <option>Medium</option>
-                        <option>Low</option>
+                      <div ng-app="listApp" ng-controller="ctrlProductLine">
+                          <select class="form-control" id="ProductLine" >
+                              <option value=""> </option>
+                              <option ng-repeat="l in items" value="{{l.Id}}">{{l.Title}}</option>
+                          </select>
+
+                        </div>    
                   </select>
                   
                   </div>
+
+                  
+                  <div class="input-group">
+                    <span class="input-group-addon" style="background-color: #e8e8e8;color: #009688;">Equipment Type</span>
+                    <div ng-app="listApp" ng-controller="ctrlEquipmentType">
+                      <select class="form-control" id="EquipmentType" >
+                          <option value=""> </option>
+                          <option ng-repeat="l in items" value="{{l.Id}}">{{l.Title}}</option>
+                      </select>
+
+                    </div>    
+                 </div>
+
                   <div class="input-group">
                           <span class="input-group-addon" style="background-color: #e8e8e8;color: #009688;">Equipment Size</span>
-                          <select class="form-control" id="Size">
-                              <option>High</option>
-                              <option>Medium</option>
-                              <option>Low</option>
-                          </select>
+                          <div ng-app="listApp" ng-controller="ctrlEquipmentSize">
+                            <select class="form-control"  id="EquipmentSize">
+                                <option value=""> </option>
+                                <option ng-repeat="l in items" value="{{l.Id}}">{{l.Title}}</option>
+                            </select>
+  
+                          </div>   
                   </div>
                       
-                  <div class="input-group">
-                     <span class="input-group-addon" style="background-color: #e8e8e8;color: #009688;">Equipment Type</span>
-                    <select class="form-control" id="Type">
-                      <option>High</option>
-                      <option>Medium</option>
-                      <option>Low</option>
-                    </select>
-                  </div>
 
                   <div class="input-group">
                     <span class="input-group-addon" style="background-color: #e8e8e8;color: #009688;">Is Stock Added</span>
@@ -313,20 +323,6 @@
          
     </div>
   </div>
-  <div ng-app="listApp">    
-      <div id="App1" ng-controller="controller1">    
-          <h1>First List Items</h1>    
-          <div ng-repeat="item in items">    
-              <p>{{item.Title}}</p>    
-          </div>    
-      </div>    
-      <div id="App2" ng-controller="controller2">    
-          <h1>Second List Items</h1>    
-          <div ng-repeat="item in items">    
-              <p>{{item.Title}}</p>    
-          </div>    
-      </div>    
-          
-  </div>    
+ 
 </body>
 </html>

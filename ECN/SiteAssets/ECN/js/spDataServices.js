@@ -3,16 +3,19 @@ var siteUrl = 'https://spg-portal.schenckprocess.com/sites/LM';
 
 
 var appVar = angular.module('listApp', []);  
-appVar.controller("controller1", function($scope){    
-    GetListItems($scope, "teste");    
+appVar.controller("ctrlEquipmentType", function($scope){    
+    GetListItems($scope, "ECN - Equipment Type");    
 });    
-appVar.controller("controller2", function($scope){    
-    GetListItems($scope, "teste");    
+appVar.controller("ctrlEquipmentSize", function($scope){    
+    GetListItems($scope, "ECN - Equipment Size");    
 });   
+appVar.controller("ctrlProductLine", function($scope){    
+    GetListItems($scope, "ECN - Product Line");    
+}); 
 
 function GetListItems($scope, listName){    
     $.ajax({    
-        url: "/_api/web/lists/GetByTitle('"+listName+"')/items",    
+        url: siteUrl + "/_api/web/lists/GetByTitle('"+listName+"')/items",    
         method: "GET",    
         async: false,    
         headers: { "Accept": "application/json;odata=verbose" },    
